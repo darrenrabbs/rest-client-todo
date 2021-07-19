@@ -55,3 +55,8 @@ Due to an issue with post, curl can be used to populate the in memory database
   
 # nice to haves
 Security api testing - using Kotlin add Spring security to test OAuth authentication
+
+
+#References
+https://howtodoinjava.com/spring-webflux/webclient-get-post-example/
+https://www.baeldung.com/spring-5-webclient
