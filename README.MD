@@ -4,7 +4,7 @@ This rest client is modelled against the toDo Kotlin application
 which can be found - 
 https://github.com/darrenrabbs/todo-app/tree/master
 
-###Endpoints are as follows 
+## Endpoints are as follows 
 
  
  | EndPoint | Action ||
@@ -17,7 +17,7 @@ https://github.com/darrenrabbs/todo-app/tree/master
  
  Decided to use Spring's Webflux for this impementation.
  
-###What is Spring Webflux
+## What is Spring Webflux
  There is  general misconception in Java is that in order to make anything concurrent, 
  one needs a large number of threads, which in reality is not the case. 
  One can achieve concurrency in Java with a few fixed number of threads by using HTTP sockets and pushing chunks of 
@@ -30,15 +30,15 @@ https://github.com/darrenrabbs/todo-app/tree/master
  Mono<void> contains information about the completion or failure of the process.
  
  
- ###Tech Stack
+ ## Tech Stack
  Java, Spring WebFlux, Junit, Lombok,
  
  
-### Working 
+## Working 
  - get by Id, get all, post, put, delete rest 
  
 
-###Output
+## Output
 
 
 
@@ -49,13 +49,13 @@ https://github.com/darrenrabbs/todo-app/tree/master
 ![!drawing =10px](output.JPG?raw=true "Output Example" )
  
  
-###Features to work on
+## Features to work on
 - unit tests with mock data
 - upload the rest service as a docker container which can be used with Fabric or a maven test-containers.
 - have a json file passed into the client which can then loop over all entries and give a report.
 
 
-###For manual testing of Rest Service
+## For manual testing of Rest Service
 - curl -w "\n" -X POST \
   -H "Content-Type: application/json" \
   -d '{"description": "write code"}' http://localhost:8080/task
@@ -65,10 +65,10 @@ https://github.com/darrenrabbs/todo-app/tree/master
   -d '{"description": "test"}' http://localhost:8080/task 
   
   
-###nice to haves
+## nice to haves
 Security api testing - using Kotlin add Spring security to test OAuth authentication
 
 
-###References
+## References
 https://howtodoinjava.com/spring-webflux/webclient-get-post-example/
 https://www.baeldung.com/spring-5-webclient
