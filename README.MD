@@ -4,16 +4,20 @@ This rest client is modelled against the toDo Kotlin application
 which can be found - 
 https://github.com/darrenrabbs/todo-app/tree/master
 
-Endpoints are as follows 
- - GET tasks/  - return a list of tasks
- - GET tasks/{id} - return a task
- - POST tasks  - add a task
- - DELETE/{id} - delete as task
+###Endpoints are as follows 
+
  
+ | EndPoint | Action ||
+ | -------   | --- | -----------------------|
+ | task/     | GET |   returns all tasks      |
+ | task/{id} | GET | returns a task with specific ID |
+ | task      | POST | with json body will post a new task |
+ | task/{id} | PUT  | with id and json body will update a task|
+ | task/{id} | DELETE | with id will delete a task            |
  
  Decided to use Spring's Webflux for this impementation.
  
-What is Spring Webflux
+###What is Spring Webflux
  There is  general misconception in Java is that in order to make anything concurrent, 
  one needs a large number of threads, which in reality is not the case. 
  One can achieve concurrency in Java with a few fixed number of threads by using HTTP sockets and pushing chunks of 
@@ -26,27 +30,25 @@ What is Spring Webflux
  Mono<void> contains information about the completion or failure of the process.
  
  
- #Tech Stack
+ ###Tech Stack
  Java, Spring WebFlux, Junit, Lombok,
  
  
-# Working 
+### Working 
  - get by Id, get all, post, put, delete rest 
  
 
-# Output
+###Output
 ![Alt text](output.JPG?raw=true "Output Example")
  
  
-# Features to work on
-- complete all rest client testing on webflux
+###Features to work on
 - unit tests with mock data
 - upload the rest service as a docker container which can be used with Fabric or a maven test-containers.
 - have a json file passed into the client which can then loop over all entries and give a report.
 
 
-# For testing
-Due to an issue with post, curl can be used to populate the in memory database
+###For manual testing of Rest Service
 - curl -w "\n" -X POST \
   -H "Content-Type: application/json" \
   -d '{"description": "write code"}' http://localhost:8080/task
@@ -56,10 +58,10 @@ Due to an issue with post, curl can be used to populate the in memory database
   -d '{"description": "test"}' http://localhost:8080/task 
   
   
-# nice to haves
+###nice to haves
 Security api testing - using Kotlin add Spring security to test OAuth authentication
 
 
-#References
+###References
 https://howtodoinjava.com/spring-webflux/webclient-get-post-example/
 https://www.baeldung.com/spring-5-webclient
