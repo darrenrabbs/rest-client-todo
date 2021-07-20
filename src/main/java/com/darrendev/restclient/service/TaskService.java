@@ -6,9 +6,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
-import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -18,8 +15,13 @@ import java.time.Duration;
 @Service
 public class TaskService implements ITaskService  {
 
+
+    private WebClient webClient;
+
     @Autowired
-    WebClient webClient;
+    public TaskService(WebClient webClient) {
+        this.webClient = webClient;
+    }
 
     @Value("${request.timeout.seconds}")
     private Integer timeout;
@@ -41,21 +43,27 @@ public class TaskService implements ITaskService  {
     }
 
     @Override
-    public Mono<Task> post(Task t) {
+    public Mono<String> post(Task t) {
         return webClient.post().uri("/task")
                 .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .body(Mono.just(t), Task.class)
                 .retrieve()
-                .bodyToMono(Task.class);
+                .bodyToMono(String.class);
     }
 
     @Override
-    public Mono<Void> delete(Integer id) {
-        return null;
+    public String delete(Integer id) {
+        return webClient.delete().uri("/task/" + id)
+                .retrieve()
+                .bodyToMono(String.class)
+                .block();
     }
 
     @Override
-    public Mono<Task> update(Task t) {
-        return null;
+    public Mono<String> update(Task t) {
+        return webClient.put().uri("/task/" + t.getId())
+                .body(Mono.just(t), Task.class)
+                .retrieve()
+                .bodyToMono(String.class);
     }
 }

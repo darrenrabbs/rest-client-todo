@@ -9,9 +9,9 @@ public interface ITaskService {
 
         Mono<Task> get(Integer id);
 
-        Mono<Task> post(Task t);
+        Mono<String> post(Task t);
 
-        Mono<Void> delete(Integer id);
+        String delete(Integer id);
 
-        Mono<Task> update(Task t);
+        Mono<String> update(Task t);
 }
