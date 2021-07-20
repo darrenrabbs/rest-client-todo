@@ -39,7 +39,14 @@ https://github.com/darrenrabbs/todo-app/tree/master
  
 
 ###Output
-![!drawing](output.JPG?raw=true "Output Example" )
+
+
+
+
+
+
+
+![!drawing =10px](output.JPG?raw=true "Output Example" )
  
  
 ###Features to work on
