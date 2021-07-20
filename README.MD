@@ -30,9 +30,12 @@ What is Spring Webflux
  Java, Spring WebFlux, Junit, Lombok,
  
  
-# Working in progress
- - get is working
- - post is throwing an exception with content type..
+# Working 
+ - get by Id, get all, post, put, delete rest 
+ 
+
+# Output
+![Alt text](output.JPG?raw=true "Output Example")
  
  
 # Features to work on
