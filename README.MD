@@ -4,6 +4,10 @@ This rest client is modelled against the toDo Kotlin application
 which can be found - 
 https://github.com/darrenrabbs/todo-app/tree/master
 
+## Docker run
+docker pull darrenrabbitt/todo-app:v2
+docker run -it -d -p 8080:8080 darrenrabbitt/todo-app:v2
+
 ## Endpoints are as follows 
 
  
@@ -31,7 +35,7 @@ https://github.com/darrenrabbs/todo-app/tree/master
  
  
  ## Tech Stack
- Java, Spring WebFlux, Junit, Lombok,
+ Java, Spring WebFlux, Junit, Lombok, Docker
  
  
 ## Working 
@@ -48,11 +52,6 @@ https://github.com/darrenrabbs/todo-app/tree/master
 
 ![!drawing =10px](output.JPG?raw=true "Output Example" )
  
- 
-## Features to work on
-- unit tests with mock data
-- upload the rest service as a docker container which can be used with Fabric or a maven test-containers.
-- have a json file passed into the client which can then loop over all entries and give a report.
 
 
 ## For manual testing of Rest Service
@@ -63,7 +62,11 @@ https://github.com/darrenrabbs/todo-app/tree/master
   curl -w "\n" -X POST \
   -H "Content-Type: application/json" \
   -d '{"description": "test"}' http://localhost:8080/task 
-  
+
+Provided the docker container is running 
+  docker pull darrenrabbitt/todo-app:v2
+  docker run -it -d -p 8080:8080 darrenrabbitt/todo-app:v2
+ The rest client should run and display above output in the console
   
 ## nice to haves
 Security api testing - using Kotlin add Spring security to test OAuth authentication
