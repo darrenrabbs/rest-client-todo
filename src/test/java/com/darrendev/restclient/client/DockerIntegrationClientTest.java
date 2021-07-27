@@ -20,7 +20,7 @@ import java.util.List;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(properties = {"application.line.runner.enabled=false"})
 @ContextConfiguration(classes =   ClientTestConfiguration.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class DockerIntegrationClientTest {

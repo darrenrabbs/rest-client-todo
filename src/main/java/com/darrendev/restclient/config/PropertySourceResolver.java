@@ -14,6 +14,9 @@ public class PropertySourceResolver {
     @Value("${basepath}")
     private String basepath;
 
+    @Value("${service.config}")
+    private String serviceConfig;
+
 
     public String getBaseurl() {
         return baseurl;
@@ -23,5 +26,6 @@ public class PropertySourceResolver {
         return basepath;
     }
 
+    public String getServiceConfig() { return serviceConfig; }
 }
 

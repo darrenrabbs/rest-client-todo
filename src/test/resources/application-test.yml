@@ -1,8 +1,8 @@
-basepath: v2/pet
-baseurl: https://petstore.swagger.io/
+basepath: task
+baseurl: http://localhost:8080
 dockerimage: darrenrabbitt/todo-app:v2
 request:
     timeout:
-        seconds: 10
+        seconds: 30
 server:
     port: 8090
