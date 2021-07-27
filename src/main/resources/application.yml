@@ -1,0 +1,14 @@
+basepath: task
+baseurl: http://localhost:8080
+dockerimage: darrenrabbitt/todo-app:v2
+request:
+    timeout:
+        seconds: 10
+server:
+    port: 8090
+
+demo:
+    application: todo-app
+    requests:
+        - "GET"
+        - "POST" '{"description": "write code"}'

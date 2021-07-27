@@ -1,0 +1,8 @@
+basepath: v2/pet
+baseurl: https://petstore.swagger.io/
+dockerimage: darrenrabbitt/todo-app:v2
+request:
+    timeout:
+        seconds: 10
+server:
+    port: 8090
