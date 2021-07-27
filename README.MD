@@ -5,7 +5,7 @@ which can be found -
 https://github.com/darrenrabbs/todo-app/tree/master
 
 ## Docker run
-docker pull darrenrabbitt/todo-app:v2
+docker pull darrenrabbitt/todo-app:v2\
 docker run -it -d -p 8080:8080 darrenrabbitt/todo-app:v2
 
 ## Endpoints are as follows 
@@ -62,11 +62,11 @@ docker run -it -d -p 8080:8080 darrenrabbitt/todo-app:v2
   curl -w "\n" -X POST \
   -H "Content-Type: application/json" \
   -d '{"description": "test"}' http://localhost:8080/task 
-
-Provided the docker container is running 
-  docker pull darrenrabbitt/todo-app:v2
-  docker run -it -d -p 8080:8080 darrenrabbitt/todo-app:v2
- The rest client should run and display above output in the console
+\
+Provided the docker container is running \
+  docker pull darrenrabbitt/todo-app:v2\
+  docker run -it -d -p 8080:8080 darrenrabbitt/todo-app:v2\
+ The rest client should run and display above output in the console\
   
 ## nice to haves
 Security api testing - using Kotlin add Spring security to test OAuth authentication
