@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "docker.image",
+      "type": "java.lang.String",
+      "description": "Description for docker.image."
+  }
+] }

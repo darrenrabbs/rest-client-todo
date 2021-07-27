@@ -1,0 +1,30 @@
+requests:
+  - action: GET
+    param: ""
+    body: ""
+    response: "[]"
+  - action: POST
+    param: ""
+    body: '{"description": "write code"}'
+    response: "write code"
+  - action: GETBYID
+    param: 1
+    body: '{"id": 1, "description": "write code2"}'
+    response: "write code"
+  - action: UPDATE
+    param: 1
+    body: '{"id": 1, "description": "write code2"}'
+    response: "write code2"
+  - action: DELETE
+    param: 2
+    body: '{"id": 1, "description": "write code2"}'
+    response: "deleted"
+
+# Have noticed some intermittent issues with petstore responses
+# application.yml - update > basepath: v2/pet
+# application.yml - update > baseurl: https://petstore.swagger.io/
+#requests:
+#  - action: GETBYID
+#    param: "1"
+#    body: ""
+#    response: "id\":1"
